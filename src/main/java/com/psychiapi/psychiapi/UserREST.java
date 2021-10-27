@@ -9,9 +9,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class UserREST {
   @Autowired
-  private UserRepository repository;
+  private UserRepository lRepository;
 
-  public List<User> UserList(){
-    return repository.findAll();
+  public List<User> GetUsers(){
+    return lRepository.findAll();
   }
+
+  public void SaveUser(User pUser) {
+    lRepository.save(pUser);
+  }
+
+  public void UpdateUser(User pUser) {
+    if (pUser.getId() > 0 && pUser.getId() != null)
+      lRepository.save(pUser);
+  }
+
+  public void DeleteUser(User pUser){
+    lRepository.delete(pUser);
+  }
+  
 }
