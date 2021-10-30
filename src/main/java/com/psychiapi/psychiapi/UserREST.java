@@ -6,6 +6,7 @@ import com.psychiapi.psychiapi.database.UserRepository;
 import com.psychiapi.psychiapi.user.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,7 @@ public class UserREST {
     return lRepository.findAll();
   }
 
-  @PostMapping("/SaveUser")
+  @PostMapping(value = "/SaveUser", consumes = "application/json")
   public void SaveUser(@RequestBody User pUser) {
     lRepository.save(pUser);
   }
