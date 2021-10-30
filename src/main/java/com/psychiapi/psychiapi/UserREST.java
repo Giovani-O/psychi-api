@@ -22,23 +22,23 @@ public class UserREST {
   @Autowired
   private UserRepository lRepository;
 
-  @GetMapping("/GetUsers")
+  @GetMapping
   public List<User> GetUsers(){
     return lRepository.findAll();
   }
 
-  @PostMapping(value = "/SaveUser", consumes = "application/json")
+  @PostMapping
   public void SaveUser(@RequestBody User pUser) {
     lRepository.save(pUser);
   }
 
-  @PutMapping("/UpdateUser")
+  @PutMapping
   public void UpdateUser(@RequestBody User pUser) {
     if (pUser.getId() > 0 && pUser.getId() != null)
       lRepository.save(pUser);
   }
 
-  @DeleteMapping("/DeleteUser")
+  @DeleteMapping
   public void DeleteUser(@RequestBody User pUser){
     lRepository.delete(pUser);
   }
