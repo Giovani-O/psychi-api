@@ -27,7 +27,7 @@ public class Album {
   @Column(nullable = false)
   private String albumName;
 
-  // Capa do album
+  // Capa do album !
   @Lob
   private String cover;
 
