@@ -28,7 +28,24 @@ public class AlbumREST {
 
   @PostMapping()
   public void SaveAlbum(@RequestBody Album pAlbum) {
-    lAlbumRepository.save(pAlbum);
+    String lArtistName = pAlbum.getArtistName();
+    String lAlbumName = pAlbum.getAlbumName();
+    String lCover = pAlbum.getCover();
+    String lSong1 = pAlbum.getSong1();
+    String lSong2 = pAlbum.getSong2();
+    String lSong3 = pAlbum.getSong3();
+    String lSong4 = pAlbum.getSong4();
+
+    Album lAlbum = new Album();
+    lAlbum.setArtistName(lArtistName);
+    lAlbum.setAlbumName(lAlbumName);
+    lAlbum.setCover(lCover);
+    lAlbum.setSong1(lSong1);
+    lAlbum.setSong2(lSong2);
+    lAlbum.setSong3(lSong3);
+    lAlbum.setSong4(lSong4);
+
+    lAlbumRepository.save(lAlbum);
   }
 
   @PutMapping

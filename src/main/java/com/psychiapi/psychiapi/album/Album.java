@@ -2,9 +2,12 @@ package com.psychiapi.psychiapi.album;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -14,7 +17,6 @@ public class Album {
   // Define que o id será gerado automaticamente
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-
   private Long id;
 
   // Nome do artista
@@ -26,12 +28,21 @@ public class Album {
   private String albumName;
 
   // Capa do album
-  @Column(nullable = false)
+  @Lob
   private String cover;
 
-  // Lista de objetos contendo as músicas
-  @Column(nullable = false)
-  private String songs;
+  // Lista de músicas
+  @Lob
+  private String song1;
+
+  @Lob
+  private String song2;
+
+  @Lob
+  private String song3;
+
+  @Lob
+  private String song4;
 
   public Long getId() {
     return id;
@@ -65,13 +76,39 @@ public class Album {
     this.cover = cover;
   }
 
-  public String getSongs() {
-    return songs;
+  public String getSong1() {
+    return song1;
   }
 
-  public void setSongs(String songs) {
-    this.songs = songs;
+  public void setSong1(String song1) {
+    this.song1 = song1;
   }
+
+  public String getSong2() {
+    return song2;
+  }
+
+  public void setSong2(String song2) {
+    this.song2 = song2;
+  }
+
+  public String getSong3() {
+    return song3;
+  }
+
+  public void setSong3(String song3) {
+    this.song3 = song3;
+  }
+
+  public String getSong4() {
+    return song4;
+  }
+
+  public void setSong4(String song4) {
+    this.song4 = song4;
+  }
+
+  
 
   
 }
