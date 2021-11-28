@@ -31,6 +31,18 @@ public class Album {
   @Lob
   private String cover;
 
+  @Column(nullable = false)
+  private String songTitle1;
+
+  @Column(nullable = false)
+  private String songTitle2;
+
+  @Column(nullable = false)
+  private String songTitle3;
+
+  @Column(nullable = false)
+  private String songTitle4;
+
   // Lista de músicas
   @Lob
   private String song1;
@@ -74,6 +86,38 @@ public class Album {
 
   public void setCover(String cover) {
     this.cover = cover;
+  }
+
+  public String getSongTitle1() {
+    return songTitle1;
+  }
+
+  public void setSongTitle1(String songTitle1) {
+    this.songTitle1 = songTitle1;
+  }
+
+  public String getSongTitle2() {
+    return songTitle2;
+  }
+
+  public void setSongTitle2(String songTitle2) {
+    this.songTitle2 = songTitle2;
+  }
+
+  public String getSongTitle3() {
+    return songTitle3;
+  }
+
+  public void setSongTitle3(String songTitle3) {
+    this.songTitle3 = songTitle3;
+  }
+
+  public String getSongTitle4() {
+    return songTitle4;
+  }
+
+  public void setSongTitle4(String songTitle4) {
+    this.songTitle4 = songTitle4;
   }
 
   public String getSong1() {

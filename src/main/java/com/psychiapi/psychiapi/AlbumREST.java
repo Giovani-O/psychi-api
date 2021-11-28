@@ -44,6 +44,10 @@ public class AlbumREST {
     lAlbum.setSong2(lSong2);
     lAlbum.setSong3(lSong3);
     lAlbum.setSong4(lSong4);
+    lAlbum.setSongTitle1(pAlbum.getSongTitle1());
+    lAlbum.setSongTitle2(pAlbum.getSongTitle2());
+    lAlbum.setSongTitle3(pAlbum.getSongTitle3());
+    lAlbum.setSongTitle4(pAlbum.getSongTitle4());
 
     lAlbumRepository.save(lAlbum);
   }
